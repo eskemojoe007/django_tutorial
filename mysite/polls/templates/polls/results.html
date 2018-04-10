@@ -1,0 +1,12 @@
+<h1>Results for {{question.question_text}}</h1>
+{% if question.choice_set.all %}
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'polls:detail' question.id %}"> Vote again?</a>
+{% else %}
+    <p>No assigned choices for this question</p>
+    <p>See the <a href="{% url 'admin:index' %}">admin page</a> to add choices to this question</p>
+{% endif %}
