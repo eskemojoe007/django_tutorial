@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
+"d65a907" = {path = ".\\django-polls", editable = true}
 
 [dev-packages]
 setuptools = "*"
